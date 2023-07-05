@@ -42,8 +42,7 @@ export default function Vditor({ vditor }: {
               || type.indexOf(".svg") === 0
               || type.indexOf(".webp") === 0
             ) {
-              const code =
-                `<img alt="${filename}" src="${path}" style="margin-left: auto; margin-right: auto; width: 100%;">\n`;
+              const code = `<img alt="${filename}" src="${path}" style="max-width: 100%;">\n`;
               succFileText += code.replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
