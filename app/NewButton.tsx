@@ -15,5 +15,9 @@ export default function NewButton() {
         </button>
       </Link>
     )
-    : null;
+    : (
+      <button disabled className="grid h-10 w-10 place-items-center rounded-full md:h-12 md:w-12">
+        <IconPencil className="text-gray-400 md:h-7 md:w-7" />
+      </button>
+    );
 }

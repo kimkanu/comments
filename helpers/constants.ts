@@ -52,4 +52,5 @@ export const MARKDOWN_CLASSNAMES = `
   [&_ul_ul]:list-[circle] [&_ol_ul]:list-[circle]
   [&_p_code]:px-0.5 [&_p_code]:rounded [&_p_code]:bg-gray-100
   [&_code]:tracking-tight [&_code]:text-sm
+  [&_img]:my-2 [&_img]:rounded-lg
 `;

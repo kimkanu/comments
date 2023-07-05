@@ -7,6 +7,7 @@ import { decode } from "js-base64";
 import dynamic from "next/dynamic";
 import { Fragment } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 const DateTime = dynamic(() => import("@/components/dom/DateTime"), {
@@ -77,6 +78,7 @@ export default async function Page({ params: { slug } }: { params: { slug: strin
           <ReactMarkdown
             className={MARKDOWN_CLASSNAMES}
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
               code({ inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");

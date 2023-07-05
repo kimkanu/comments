@@ -1,4 +1,5 @@
 import { REPOSITORY_INFO } from "@/helpers/constants";
+import { octokit } from "@/lib/octokit";
 import { IconLoader2 } from "@tabler/icons-react";
 import { Suspense } from "react";
 import DeferredPost from "./DeferredPost";
@@ -24,10 +25,10 @@ export default function Posts() {
 const PRELOADED_POST_COUNT = 10;
 
 async function Inner() {
-  const directoryData = await fetch(
-    `https://api.github.com/repos/${REPOSITORY_INFO.owner}/${REPOSITORY_INFO.repo}/contents/posts`,
-    { cache: "no-cache" },
-  ).then(response => response.json()).then(response =>
+  const directoryData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
+    ...REPOSITORY_INFO,
+    path: "posts",
+  }).then(response => response.data).then(response =>
     (Array.isArray(response) ? response : [response]) as {
       type: string;
       name: string;
