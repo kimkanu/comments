@@ -5,13 +5,15 @@ import NewButton from "./NewButton";
 import Posts from "./Posts";
 
 import "@/app/global.css";
-import { IconLogin, IconLogout } from "@tabler/icons-react";
 import SignInButton from "./SignInButton";
 import SignOutButton from "./SignOutButton";
 
 export const metadata = {
-  title: "Next.js + Three.js",
-  description: "A minimal starter for Nextjs + React-three-fiber and Threejs.",
+  title: "Keonwoo Kim",
+  description: "Keonwoo Kim's Devlog",
+  themeColor: "#bcbcc1",
+  creator: "Keonwoo Kim",
+  icons: "https://github.com/kimkanu.png",
 };
 export const revalidate = 10 * 60;
 export const fetchCache = "force-cache";
