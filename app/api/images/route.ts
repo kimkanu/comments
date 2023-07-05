@@ -3,12 +3,6 @@ import { octokit } from "@/lib/octokit";
 import { nanoid } from "nanoid";
 import { NextResponse } from "next/server";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 export async function POST(request: Request) {
   const data = await request.formData();
   const fileOrFiles = data.get("file[]") as File | File[] | null | undefined;
