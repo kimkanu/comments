@@ -2,7 +2,6 @@ import {
   IconBrandJavascript,
   IconBrandNextjs,
   IconBrandReact,
-  IconGlobe,
   IconQuestionMark,
   IconWorld,
   type TablerIconsProps,

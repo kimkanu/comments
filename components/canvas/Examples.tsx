@@ -2,7 +2,7 @@
 
 import { useGLTF } from "@react-three/drei";
 import { Line, MeshDistortMaterial, useCursor } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { type PrimitiveProps, useFrame } from "@react-three/fiber";
 import { useRouter } from "next/navigation";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -25,7 +25,7 @@ export const Blob = ({ route = "/", ...props }) => {
 };
 
 export const Logo = ({ route = "/blob", ...props }) => {
-  const mesh = useRef(null);
+  const mesh = useRef<THREE.Group>(null!);
   const router = useRouter();
 
   const [hovered, hover] = useState(false);
@@ -55,14 +55,14 @@ export const Logo = ({ route = "/blob", ...props }) => {
   );
 };
 
-export function Duck(props) {
+export function Duck(props: Omit<PrimitiveProps, "object">) {
   const { scene } = useGLTF("/duck.glb");
 
-  useFrame((state, delta) => (scene.rotation.y += delta));
+  useFrame((_, delta) => (scene.rotation.y += delta));
 
   return <primitive object={scene} {...props} />;
 }
-export function Dog(props) {
+export function Dog(props: Omit<PrimitiveProps, "object">) {
   const { scene } = useGLTF("/dog.glb");
 
   return <primitive object={scene} {...props} />;

@@ -7,7 +7,7 @@
 // 3 - enjoy
 import { addEffect, useFrame } from "@react-three/fiber";
 import Lenis from "@studio-freight/lenis";
-import { useEffect } from "react";
+import { type PropsWithChildren, useEffect } from "react";
 import { useRef } from "react";
 import * as THREE from "three";
 
@@ -18,14 +18,14 @@ const state = {
 
 const { damp } = THREE.MathUtils;
 
-export default function Scroll({ children }) {
-  const content = useRef(null);
-  const wrapper = useRef(null);
+export default function Scroll({ children }: PropsWithChildren) {
+  const content = useRef<HTMLDivElement>(null);
+  const wrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const lenis = new Lenis({
-      wrapper: wrapper.current,
-      content: content.current,
+      wrapper: wrapper.current!,
+      content: content.current!,
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
       direction: "vertical", // vertical, horizontal
@@ -36,7 +36,7 @@ export default function Scroll({ children }) {
       infinite: false,
     });
 
-    lenis.on("scroll", ({ scroll, progress }) => {
+    lenis.on("scroll", ({ scroll, progress }: { scroll: number; progress: number }) => {
       state.top = scroll;
       state.progress = progress;
     });

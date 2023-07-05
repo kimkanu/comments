@@ -10,10 +10,11 @@ export default function SyntaxHighlighter({ language, children, ...props }: Prop
   return (
     <Prism
       {...props}
-      children={String(children).replace(/\n$/, "")}
       style={dracula}
       language={language}
       PreTag="div"
-    />
+    >
+      {String(children).replace(/\n$/, "")}
+    </Prism>
   );
 }
