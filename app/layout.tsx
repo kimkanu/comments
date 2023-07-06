@@ -15,7 +15,7 @@ export const metadata = {
   creator: "Keonwoo Kim",
   icons: "https://github.com/kimkanu.png",
 };
-export const revalidate = 10 * 60;
+export const revalidate = 600;
 export const fetchCache = "force-cache";
 
 export default async function RootLayout({ children }: PropsWithChildren) {

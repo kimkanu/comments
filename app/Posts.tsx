@@ -28,6 +28,9 @@ async function Inner() {
   const directoryData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
     ...REPOSITORY_INFO,
     path: "posts",
+    headers: {
+      cache: "no-cache",
+    },
   }).then(response => response.data).then(response =>
     (Array.isArray(response) ? response : [response]) as {
       type: string;
