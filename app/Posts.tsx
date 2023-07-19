@@ -22,6 +22,8 @@ export default function Posts() {
   );
 }
 
+export const revalidate = 600;
+
 const PRELOADED_POST_COUNT = 10;
 
 async function Inner() {
@@ -31,7 +33,10 @@ async function Inner() {
     headers: {
       cache: "no-cache",
     },
-  }).then(response => response.data).then(response =>
+  }).then(response => {
+    console.log("RESPONSE", response.data);
+    return response.data;
+  }).then(response =>
     (Array.isArray(response) ? response : [response]) as {
       type: string;
       name: string;
