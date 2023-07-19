@@ -40,11 +40,11 @@ export const ICON_STYLES: { [key: string]: IconStyle | undefined } & { other: Ic
 };
 
 export const MARKDOWN_CLASSNAMES = `
-  [&_h1]:font-extrabold [&_h1]:text-3xl [&_h1]:py-2 lg:[&_h1]:text-4xl
-  [&_h2]:font-extrabold [&_h2]:text-[25px] [&_h2]:py-1.5 lg:[&_h2]:text-3xl
-  [&_h3]:font-extrabold [&_h3]:text-[22px] [&_h3]:py-1 lg:[&_h3]:text-2xl
-  [&_h4]:font-extrabold [&_h4]:text-xl [&_h4]:py-0.5
-  [&_h5]:font-extrabold [&_h5]:text-lg [&_h5]:py-0.5
+  [&_h1]:font-extrabold [&_h1]:text-3xl [&_h1]:!pt-6 [&_h1]:!pb-4 lg:[&_h1]:text-4xl
+  [&_h2]:font-extrabold [&_h2]:text-[25px] [&_h2]:!pt-4 [&_h2]:!pb-3 lg:[&_h2]:text-3xl
+  [&_h3]:font-extrabold [&_h3]:text-[22px] [&_h3]:!pt-3 [&_h3]:!pb-2 lg:[&_h3]:text-2xl
+  [&_h4]:font-extrabold [&_h4]:text-xl [&_h4]:!py-1
+  [&_h5]:font-extrabold [&_h5]:text-lg [&_h5]:!py-1
   [&_h6]:font-extrabold
   [&_a]:text-sky-500 [&_a]:px-0.5 [&_a]:rounded [&_a:hover]:bg-sky-100 [&_a:active]:bg-sky-100
   [&_ol]:list-decimal [&_ul]:list-disc [&_ul]:pl-4
