@@ -15,7 +15,7 @@ export const metadata = {
   creator: "Keonwoo Kim",
   icons: "https://github.com/kimkanu.png",
 };
-export const revalidate = 600;
+export const revalidate = 60;
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   const session = await getServerSession();

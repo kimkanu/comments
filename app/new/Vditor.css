@@ -1173,8 +1173,11 @@ ul ol {
     color: var(--second-color);
 }
 
-.vditor-ir__node:not(.vditor-ir__node--expand) .vditor-ir__marker {
+.vditor-ir__node:not(.vditor-ir__node--expand) .vditor-ir__marker--info {
     padding: 0 !important;
+    font-size: 0.75rem !important;
+    color: #6b7280 !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .vditor-ir__node:not(.vditor-ir__node--expand)[data-type="a"] {
@@ -1191,16 +1194,15 @@ ul ol {
 }
 
 .vditor-ir__node .vditor-ir__marker {
-    display: inline-block;
 }
 
 .vditor-ir__node--hidden .vditor-ir__marker {
     visibility: hidden;
 }
 
-.vditor-ir__node--expand .vditor-ir__marker {
+.vditor-ir__node--expand[data-type="code-block"] .vditor-ir__marker:not(.vditor-ir__marker--info) {
     color: var(--second-color);
-    display: inline-block;
+    display: block !important;
 }
 
 .vditor-ir__node--expand .vditor-ir__marker--hide {
@@ -1242,6 +1244,14 @@ ul ol {
     color: var(--textarea-text-color);
     height: auto;
     text-align: left;
+}
+
+.vditor-ir__marker--pre code {
+    width: 100%;
+    display: block;
+    padding: 6.8px !important;
+    font-size: 13.6px !important;
+    line-height: 20.4px !important;
 }
 
 .vditor-ir__node--expand[data-type="code-block"]:before,

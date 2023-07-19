@@ -30,7 +30,7 @@
     "javascript-time-ago": "^2.5.9",
     "js-base64": "^3.7.5",
     "nanoid": "^4.0.2",
-    "next": "^13.4.8",
+    "next": "13.4.11-canary.0",
     "next-auth": "^4.22.1",
     "octokit": "^2.1.0",
     "openai-edge": "^1.1.1",
