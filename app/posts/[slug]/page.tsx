@@ -23,7 +23,6 @@ const Utterances = dynamic(() => import("./Utterances"), {
   ssr: false,
 });
 export const revalidate = 60;
-export const fetchCache = "force-cache";
 
 export default async function Page({ params: { slug } }: { params: { slug: string } }) {
   const fileData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
